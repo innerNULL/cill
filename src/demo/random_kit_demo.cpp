@@ -44,6 +44,13 @@ int32_t random_iterator_demo() {
   cill::print_kit::print_simple_num_vector<float>(case0_var2);
   cill::print_kit::print_simple_num_vector<float>(case0_var3);
   cill::print_kit::print_simple_num_vector<float>(case0_var4);
+
+  std::cout << "-------case1--------" << std::endl;
+  std::vector< std::pair<std::string, float> > case1_var0 = {{"a", 0.1}, {"b", 0.2}, {"c", 0.3}, {"d", 0.4}, {"e", 0.5}, {"f", 0.6}, {"g", 0.7}};
+  std::vector< std::pair<std::string, float> > case1_var1 = cill::random_kit::vector_of_str_k_num_v_pairs_random_choose<float>(case1_var0, 5);
+  cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case1_var0);
+  cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case1_var1);
+
   return 0;
 }
 

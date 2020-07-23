@@ -33,11 +33,25 @@ namespace random_kit {
 template <typename ITEM_TYPE>
 inline auto vector_random_choose(const std::vector<ITEM_TYPE>& input, int32_t target_num) -> std::vector<ITEM_TYPE> {
   std::vector<ITEM_TYPE> output;
-  if (input.size() < target_num || target_num <= 0) {
+  if (input.size() < target_num || target_num <= 0 || input.size() == 1) {
     output = input;
   } else {
-    std::vector<int32_t> random_choosen_idx = random_uniform_vector<int32_t>(target_num, 0, input.size(), true);
+    std::vector<int32_t> random_choosen_idx = random_uniform_vector<int32_t>(target_num, 0, input.size() - 1, true);
     output = iterator_kit::vector_elastic_index<ITEM_TYPE>(input, random_choosen_idx);
+  }
+  return output;
+}
+
+
+template <typename VAL_TYPE>
+inline auto vector_of_str_k_num_v_pairs_random_choose(const std::vector< std::pair<std::string, VAL_TYPE> >& input, 
+    int32_t target_num) -> std::vector< std::pair<std::string, VAL_TYPE> > {
+  std::vector< std::pair<std::string, VAL_TYPE> > output;
+  if (input.size() < target_num || target_num <= 0 || input.size() == 1) {
+    output = input;
+  } else {
+    std::vector<int32_t> random_choosen_idx = random_uniform_vector<int32_t>(target_num, 0, input.size() - 1, true);
+    output = iterator_kit::vector_of_str_k_num_v_pairs_elastic_index<VAL_TYPE>(input, random_choosen_idx); 
   }
   return output;
 }

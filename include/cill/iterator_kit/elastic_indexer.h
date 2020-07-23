@@ -46,6 +46,7 @@ inline auto vector_of_str_k_num_v_pairs_elastic_index(
   std::vector< std::pair<std::string, VAL_TYPE> > output;
   for (auto& index : target_indexs) {
     output.emplace_back(input[index]);
+    //std::cout << "dbg " << index << ", " << input[index].first << ", " << input[index].second << std::endl;
   }
   return output;
 }
