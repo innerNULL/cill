@@ -20,7 +20,7 @@
 #include "include/cill/print_kit/printer.h"
 #include "include/cill/random_kit/random.h"
 #include "include/cill/random_kit/random_num.h"
-
+#include "include/cill/random_kit/random_iterator.h"
 
 
 int32_t random_demo() {
@@ -28,7 +28,22 @@ int32_t random_demo() {
   std::cout << tmp0 << "random_demo" << std::endl;
 
   std::vector<int32_t> random_uniform_vector_demo_0 = cill::random_kit::random_uniform_vector<int32_t>(5, 10, 20, true);
-  cill::print_kit::print_simple_num_vector(random_uniform_vector_demo_0);
+  cill::print_kit::print_simple_num_vector<int32_t>(random_uniform_vector_demo_0);
+  return 0;
+}
+
+
+int32_t random_iterator_demo() {
+  std::cout << "random_iterator_demo" << std::endl;
+  std::vector<float> case0_var0 = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7};
+  std::vector<float> case0_var1 = cill::random_kit::vector_random_choose<float>(case0_var0, 5);
+  std::vector<float> case0_var2 = cill::random_kit::vector_random_choose<float>(case0_var0, 8);
+  std::vector<float> case0_var3 = cill::random_kit::vector_random_choose<float>(case0_var0, 0);
+  std::vector<float> case0_var4 = cill::random_kit::vector_random_choose<float>(case0_var0, 10);
+  cill::print_kit::print_simple_num_vector<float>(case0_var1);
+  cill::print_kit::print_simple_num_vector<float>(case0_var2);
+  cill::print_kit::print_simple_num_vector<float>(case0_var3);
+  cill::print_kit::print_simple_num_vector<float>(case0_var4);
   return 0;
 }
 
@@ -42,6 +57,7 @@ int main(int argc, char *argv[]) {
     std::cout << output << std::endl;
   }
   random_demo();
+  random_iterator_demo();
   return 0;
 }
 
