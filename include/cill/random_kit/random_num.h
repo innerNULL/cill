@@ -65,7 +65,7 @@ inline auto random_uniform_vector(const int32_t target_size,
 
 
 
-} //namespace num_kit
+} // namespace random_kit
 } // namesapce cill
 
 #endif

@@ -19,7 +19,5 @@ include_directories(${PROJECT_SOURCE_DIR}/include/cill/3rdparty/)
 
 set(RANDOM_KIT_DEMO src/demo/random_kit_demo.cpp)
 add_executable(random_kit_demo ${RANDOM_KIT_DEMO})
-#set(ITERATOR_KIT_DEMO src/demo/iterator_kit_demo.cpp)
-#add_executable(iterator_kit_demo ${ITERATOR_KIT_DEMO})
 
 

@@ -17,6 +17,7 @@
 #include <set>
 #include <math.h> 
 
+#include "include/cill/print_kit/printer.h"
 #include "include/cill/random_kit/random.h"
 #include "include/cill/random_kit/random_num.h"
 
@@ -27,6 +28,7 @@ int32_t random_demo() {
   std::cout << tmp0 << "random_demo" << std::endl;
 
   std::vector<int32_t> random_uniform_vector_demo_0 = cill::random_kit::random_uniform_vector<int32_t>(5, 10, 20, true);
+  cill::print_kit::print_simple_num_vector(random_uniform_vector_demo_0);
   return 0;
 }
 

@@ -35,7 +35,7 @@ inline int32_t microsecond_random_seed() {
 }
 
 
-} //namespace num_kit
+} // namespace random_kit
 } // namesapce cill
 
 #endif
