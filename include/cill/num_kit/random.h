@@ -27,8 +27,7 @@ namespace num_kit {
 
 inline auto random_bin() -> int32_t {
   int32_t random_output = rand() % 10;
-  int32_t output = (random_output < 5) ? 0 : 1;
-  return output;
+  return (random_output < 5) ? 0 : 1;
 }
 
 
