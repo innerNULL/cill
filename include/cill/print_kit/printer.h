@@ -39,6 +39,19 @@ inline int32_t print_simple_num_vector(const std::vector<INPUT_TYPE>& input, con
 }
 
 
+template <typename VAL_TYPE>
+inline int32_t print_vector_of_str_k_num_v_pairs(const std::vector< std::pair<std::string, VAL_TYPE> >& input, 
+    const std::string kv_delimiter=":", const std::string kv_pair_delimiter=",") {
+  std::string print_str;
+  for (auto& kv_pair : input) {
+    print_str = print_str + kv_pair.first + kv_delimiter + std::to_string(kv_pair.second) + kv_pair_delimiter;
+  }
+  print_str.pop_back();
+  std::cout << print_str << std::endl;
+  return 0;
+}
+
+
 } // namespace print_kit
 } // namesapce cill
 

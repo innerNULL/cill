@@ -39,6 +39,18 @@ inline auto vector_elastic_index(const std::vector<ITEM_TYPE>& input,
 }
 
 
+template <typename VAL_TYPE>
+inline auto vector_of_str_k_num_v_pairs_elastic_index(
+    const std::vector< std::pair<std::string, VAL_TYPE> >& input, 
+    const std::vector<int32_t>& target_indexs) -> std::vector< std::pair<std::string, VAL_TYPE> > {
+  std::vector< std::pair<std::string, VAL_TYPE> > output;
+  for (auto& index : target_indexs) {
+    output.emplace_back(input[index]);
+  }
+  return output;
+}
+
+
 } // namespace iterator_kit
 } // namesapce cill
 
