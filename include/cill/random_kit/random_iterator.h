@@ -20,10 +20,10 @@
 #include <set>
 #include <math.h>
 
-#include "include/cill/print_kit/printer.h"
-#include "include/cill/random_kit/random.h"
-#include "include/cill/random_kit/random_num.h"
-#include "include/cill/iterator_kit/elastic_indexer.h"
+#include "cill/print_kit/printer.h"
+#include "cill/random_kit/random.h"
+#include "cill/random_kit/random_num.h"
+#include "cill/iterator_kit/elastic_indexer.h"
 
 
 namespace cill {
