@@ -16,7 +16,7 @@ jobs:
     - name: preprocess
       run: mkdir ./build && cd ./build && pwd && ls ../
     - name: cmake
-      run: cmake ../
+      run: ls ../ && cmake ../
     - name: make 
       run: make
     - name: make check
