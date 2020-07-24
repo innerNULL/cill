@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.14.5)
+
+# 2020-07-23
+
+cmake_minimum_required(VERSION 3.16.2)
 project(cill C CXX)
 enable_testing()
 set(CMAKE_MACOSX_RPATH 1)
