@@ -43,6 +43,33 @@ inline auto str_k_num_v_pairs_vec_range_querier(const std::vector< std::pair<std
 }
 
 
+template <typename VAL_TYPE>
+inline auto str_k_num_v_pairs_vec_top_querier(const std::vector< std::pair<std::string, VAL_TYPE> >& input, 
+    const int32_t top_n, const std::string sort_mode) -> std::vector< std::pair<std::string, VAL_TYPE> > {
+  std::vector< std::pair<std::string, VAL_TYPE> > output;
+  std::vector< std::pair<std::string, VAL_TYPE> > output_tmp = input;
+
+  if (top_n > input.size()) { return output; }
+  if (sort_mode != "descend" && sort_mode != "ascend") { return output; }
+
+  if (sort_mode == "descend") {
+    std::sort(output_tmp.begin(), output_tmp.end(), 
+        [](const std::pair<std::string, VAL_TYPE>& a, const std::pair<std::string, VAL_TYPE>& b) -> bool { 
+          return a.second > b.second; 
+        }
+    );
+  } else if (sort_mode == "ascend") {
+    std::sort(output_tmp.begin(), output_tmp.end(), 
+        [](const std::pair<std::string, VAL_TYPE>& a, const std::pair<std::string, VAL_TYPE>& b) -> bool {
+          return a.second < b.second;
+        }
+    );
+  }
+  output.assign(output_tmp.begin(), output_tmp.begin() + top_n);
+  return output;
+}
+
+
 } // namespace iterator_kit
 } // namesapce cill
 

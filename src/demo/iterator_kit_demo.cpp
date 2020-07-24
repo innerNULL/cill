@@ -53,6 +53,19 @@ int32_t elastic_querier_demo() {
   cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case0_var0);
   cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case0_var1);
   cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case0_var2);
+
+  std::cout << "-------case1-------" << std::endl;
+  std::vector< std::pair<std::string, float> > case1_var0 = {{"a", 0.9}, {"b", 1.2}, {"c", -4.3}, {"d", 0.04}};
+  std::vector< std::pair<std::string, float> > case1_var1;
+  std::vector< std::pair<std::string, float> > case1_var2;
+  std::vector< std::pair<std::string, float> > case1_var3;
+  case1_var1 = cill::iterator_kit::str_k_num_v_pairs_vec_top_querier(case1_var0, 2, "descend");
+  case1_var2 = cill::iterator_kit::str_k_num_v_pairs_vec_top_querier(case1_var0, 2, "ascend");
+  case1_var3 = cill::iterator_kit::str_k_num_v_pairs_vec_top_querier(case1_var0, 2, "fake");
+  cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case1_var1);
+  cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case1_var2);
+  cill::print_kit::print_vector_of_str_k_num_v_pairs<float>(case1_var3);
+
   return 0;
 }
 
