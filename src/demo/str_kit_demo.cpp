@@ -25,10 +25,18 @@
 
 
 int32_t str_helper_demo() {
-  std::string case0_var0 = "a,b,c,d,e,f,g";
-  std::string case0_var1 = ",";
+  std::cout << "=======str_helper_demo=======" << std::endl;
+  std::cout << "-------case0-------" << std::endl;
+  std::string case0_var0 = "a-b-c-d-e-f-g";
+  std::string case0_var1 = "-";
   std::vector<std::string> case0_var2 = cill::str_kit::str_spliter(case0_var0, case0_var1);
   cill::print_kit::print_simple_str_vector(case0_var2);
+
+  std::cout << "-------case1-------" << std::endl;
+  std::string case1_var0 = "--,-a-b--c-d-e-f---";
+  std::string case1_var1 = "-";
+  std::vector<std::string> case1_var2 = cill::str_kit::str_spliter(case1_var0, case1_var1);
+  cill::print_kit::print_simple_str_vector(case1_var2);
   return 0;
 }
 
