@@ -27,8 +27,17 @@ namespace cill {
 namespace str_kit {
 
 
-inline auto str_spliter(std::string input, const std::string& delimiter, 
-    const bool if_filter_empty=true) -> std::vector<std::string> {
+inline bool is_num_str(const std::string input) {
+  std::stringstream sin(input);
+  double num_holder;
+  char char_holder;
+  if (!(sin >> num_holder)) { return false; }
+  if (sin >> char_holder) { return false; }
+  return true;
+}
+
+
+inline auto str_spliter(std::string input, const std::string& delimiter) -> std::vector<std::string> {
   std::vector<std::string> output;
 
   int32_t location = input.find(delimiter);
