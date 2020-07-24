@@ -27,6 +27,17 @@ namespace cill {
 namespace print_kit {
 
 
+inline int32_t print_simple_str_vector(const std::vector<std::string>& input, const std::string delimiter=",") {
+  std::string print_str;
+  for (auto& item : input) {
+    print_str = print_str + item + delimiter;
+  }
+  print_str.pop_back();
+  std::cout << print_str << std::endl;
+  return 0;
+}
+
+
 template <typename INPUT_TYPE>
 inline int32_t print_simple_num_vector(const std::vector<INPUT_TYPE>& input, const std::string delimiter=",") {
   std::string print_str;
