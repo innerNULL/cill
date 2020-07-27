@@ -27,13 +27,24 @@
 namespace cill {
 
 
+/**
+ * @brief
+ * Elastical indexing/slicing 
+ */
 template <typename ITEM_TYPE>
 inline auto vector_elastic_index(const std::vector<ITEM_TYPE>& input, 
     const std::vector<int32_t>& target_indexs) -> std::vector<ITEM_TYPE> {
   std::vector<ITEM_TYPE> output;
-  for (auto& index : target_indexs) {
-    output.emplace_back(input[index]);
-  }
+  for (auto& index : target_indexs) { output.emplace_back(input[index]); }
+  return output;
+}
+
+
+//TODO(inull): Support `vector_elastic_index` for string
+inline auto vector_elastic_index(const std::vector<std::string>& input, 
+    const std::vector<int32_t>& target_indexs) -> std::vector<std::string> {
+  std::vector<std::string> output;
+  for (auto& index : target_indexs) { output.emplace_back(input[index]); }
   return output;
 }
 

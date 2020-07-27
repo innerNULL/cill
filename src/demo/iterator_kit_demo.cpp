@@ -33,11 +33,15 @@ int32_t elastic_indexer_demo() {
   cill::print_simple_num_vector<float>(case0_var2);
 
   std::cout << "-------case1-------" << std::endl;
-  std::vector< std::pair<std::string, float> > case2_var0 = {{"a", 0.1}, {"b", 0.2}, {"c", 0.3}, {"d", 0.4}};
+  std::vector< std::pair<std::string, float> > case1_var0 = {{"a", 0.1}, {"b", 0.2}, {"c", 0.3}, {"d", 0.4}};
   std::vector<int32_t> case1_var1 = {3, 0, 2};
-  std::vector< std::pair<std::string, float> > case2_var2 = cill::vector_of_str_k_num_v_pairs_elastic_index<float>(case2_var0, case1_var1);
-  cill::print_vector_of_str_k_num_v_pairs<float>(case2_var0);
-  cill::print_vector_of_str_k_num_v_pairs<float>(case2_var2);
+  std::vector< std::pair<std::string, float> > case1_var2 = cill::vector_of_str_k_num_v_pairs_elastic_index<float>(case1_var0, case1_var1);
+  cill::print_vector_of_str_k_num_v_pairs<float>(case1_var0);
+  cill::print_vector_of_str_k_num_v_pairs<float>(case1_var2);
+
+  std::cout << "-------case2-------" << std::endl;
+  std::vector<std::string> case2_var0 = {"h", "e", "l", "l", "o", "w", "o", "r", "l", "d"};
+  cill::print_simple_str_vector(cill::vector_elastic_index(case2_var0, {0, 1, 8, 6}));
   return 0;
 }
 
