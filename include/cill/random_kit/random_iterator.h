@@ -27,7 +27,6 @@
 
 
 namespace cill {
-namespace random_kit {
 
 
 template <typename ITEM_TYPE>
@@ -37,7 +36,7 @@ inline auto vector_random_choose(const std::vector<ITEM_TYPE>& input, int32_t ta
     output = input;
   } else {
     std::vector<int32_t> random_choosen_idx = random_uniform_vector<int32_t>(target_num, 0, input.size() - 1, true);
-    output = iterator_kit::vector_elastic_index<ITEM_TYPE>(input, random_choosen_idx);
+    output = vector_elastic_index<ITEM_TYPE>(input, random_choosen_idx);
   }
   return output;
 }
@@ -51,13 +50,12 @@ inline auto vector_of_str_k_num_v_pairs_random_choose(const std::vector< std::pa
     output = input;
   } else {
     std::vector<int32_t> random_choosen_idx = random_uniform_vector<int32_t>(target_num, 0, input.size() - 1, true);
-    output = iterator_kit::vector_of_str_k_num_v_pairs_elastic_index<VAL_TYPE>(input, random_choosen_idx); 
+    output = vector_of_str_k_num_v_pairs_elastic_index<VAL_TYPE>(input, random_choosen_idx); 
   }
   return output;
 }
 
 
-} // namespace random_kit
 } // namesapce cill
 
 #endif

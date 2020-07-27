@@ -26,7 +26,6 @@
 
 
 namespace cill {
-namespace str_kit {
 
 
 template <typename VAL_TYPE>
@@ -49,7 +48,6 @@ inline auto str_str_k_num_v_group_parser(const std::string& input,
 }
 
 
-} // namespace str_kit
 } // namesapce cill
 
 #endif

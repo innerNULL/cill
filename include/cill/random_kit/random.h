@@ -24,7 +24,6 @@
 
 
 namespace cill {
-namespace random_kit {
 
 
 inline int32_t microsecond_random_seed() {
@@ -35,7 +34,6 @@ inline int32_t microsecond_random_seed() {
 }
 
 
-} // namespace random_kit
 } // namesapce cill
 
 #endif

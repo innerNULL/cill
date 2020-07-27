@@ -24,7 +24,6 @@
 
 
 namespace cill {
-namespace random_kit {
 
 
 inline auto random_bin() -> int32_t {
@@ -64,8 +63,6 @@ inline auto random_uniform_vector(const int32_t target_size,
 }
 
 
-
-} // namespace random_kit
 } // namesapce cill
 
 #endif

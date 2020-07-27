@@ -24,7 +24,6 @@
 
 
 namespace cill {
-namespace str_kit {
 
 
 inline bool is_num_str(const std::string input) {
@@ -52,7 +51,6 @@ inline auto str_spliter(std::string input, const std::string& delimiter) -> std:
 }
 
 
-} // namespace str_kit
 } // namesapce cill
 
 #endif

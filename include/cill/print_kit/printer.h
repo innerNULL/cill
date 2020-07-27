@@ -24,7 +24,6 @@
 
 
 namespace cill {
-namespace print_kit {
 
 
 inline int32_t print_simple_str_vector(const std::vector<std::string>& input, const std::string delimiter=",") {
@@ -63,7 +62,6 @@ inline int32_t print_vector_of_str_k_num_v_pairs(const std::vector< std::pair<st
 }
 
 
-} // namespace print_kit
 } // namesapce cill
 
 #endif

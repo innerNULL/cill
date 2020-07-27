@@ -25,7 +25,6 @@
 
 
 namespace cill {
-namespace iterator_kit {
 
 
 template <typename ITEM_TYPE>
@@ -52,7 +51,6 @@ inline auto vector_of_str_k_num_v_pairs_elastic_index(
 }
 
 
-} // namespace iterator_kit
 } // namesapce cill
 
 #endif

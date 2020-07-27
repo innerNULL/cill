@@ -25,7 +25,6 @@
 
 
 namespace cill {
-namespace iterator_kit {
 
 
 template <typename VAL_TYPE>
@@ -70,7 +69,6 @@ inline auto str_k_num_v_pairs_vec_top_querier(const std::vector< std::pair<std::
 }
 
 
-} // namespace iterator_kit
 } // namesapce cill
 
 #endif
