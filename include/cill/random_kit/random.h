@@ -26,6 +26,10 @@
 namespace cill {
 
 
+/**
+ * @brief
+ * Set seed according current time, microsecond level.
+ */
 inline int32_t microsecond_random_seed() {
   struct timeb time_seed;
   ftime(&time_seed);

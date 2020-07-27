@@ -26,6 +26,10 @@
 namespace cill {
 
 
+/**
+ * @brief
+ * Generate binary 0-1 random number.
+ */
 inline auto random_bin() -> int32_t {
   int32_t random_output = rand() % 10;
   return (random_output < 5) ? 0 : 1;
