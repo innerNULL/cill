@@ -20,8 +20,8 @@
 #include <set>
 #include <math.h>
 
-#include "cill/random_kit/random.h"
-#include "cill/random_kit/random_num.h"
+#include "../random_kit/random.h"
+#include "../random_kit/random_num.h"
 
 
 namespace cill {

@@ -22,7 +22,7 @@
 #include <time.h>
 #include <sys/timeb.h>
 
-#include "cill/str_kit/str_helper.h"
+#include "../str_kit/str_helper.h"
 
 
 namespace cill {
