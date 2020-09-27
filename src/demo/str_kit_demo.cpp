@@ -51,6 +51,12 @@ int32_t str_helper_demo() {
   cill::substr_replace(case3_target_str, "/?", "");
   std::cout << case3_target_str << std::endl;
 
+  std::cout << "-------case4-------" << std::endl;
+  std::string case4_vec_str = "1,2,3,4,5,6";
+  std::vector<float> case4_num_vec;
+  cill::str2num_vec<float>(case4_num_vec, case4_vec_str, ",");
+  cill::print_simple_num_vector<float>(case4_num_vec);
+
   return 0;
 }
 

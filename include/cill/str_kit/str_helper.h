@@ -66,10 +66,26 @@ inline int32_t substr_replace(std::string& target_str,
   std::string::size_type using_substr_size = using_substr.size();
 
   while ( (pos = target_str.find(replacing_substr, pos)) != std::string::npos ) {
-    //std::cout << "dbg " << pos  << " " << replacing_substr_size << " " << using_substr_size << std::endl;
     target_str.replace(pos, replacing_substr_size, using_substr);
     pos += using_substr_size;
   }
+  return 0;
+}
+
+
+/**
+ * @brief
+ * Convert a string form numerical vector, e.g., "1,2,3,4,5", into a numerical `std::vector`.
+ *
+ * @param dest Destination to saving extracted numerical vector.
+ * @param source_str Source string from which we extract the numerical vector.
+ * @param Each element's splitter in `source_str`.
+ */
+template <typename NUM_TYPE>
+inline int32_t str2num_vec(std::vector<NUM_TYPE>& dest, const std::string source_str, const std::string delimiter) {
+  dest.clear();
+  std::vector<std::string> str_elements = str_spliter(source_str, delimiter);
+  for (auto& item : str_elements) { dest.emplace_back((NUM_TYPE)std::stof(item)); }
   return 0;
 }
 
