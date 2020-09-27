@@ -45,6 +45,12 @@ int32_t str_helper_demo() {
   std::string case2_var2 = "kjh32";
   std::cout << cill::is_num_str(case2_var0) << ", " << cill::is_num_str(case2_var1) 
       << ", " << cill::is_num_str(case2_var2) << std::endl;
+
+  std::cout << "-------case3-------" << std::endl;
+  std::string case3_target_str = "/?asdgfkjhak/?sdkjfh";
+  cill::substr_replace(case3_target_str, "/?", "");
+  std::cout << case3_target_str << std::endl;
+
   return 0;
 }
 
@@ -68,6 +74,7 @@ int32_t str_parser_demo() {
   std::unordered_map<std::string, std::string> case2_parsing_result;
   cill::str_k_str_v_groups_str_parser(case2_parsing_result, case2_source_str, "&", "=");
   for (auto& item : case2_parsing_result) { std::cout << item.first << ": " << item.second << std::endl; }
+
   return 0;
 }
 
