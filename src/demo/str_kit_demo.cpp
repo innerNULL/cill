@@ -62,6 +62,12 @@ int32_t str_parser_demo() {
   std::vector< std::pair<std::string, float> > case1_var1;
   case1_var1 = cill::str_str_k_num_v_group_parser<float>(case1_var0, 0, 3, "|", "#");
   cill::print_vector_of_str_k_num_v_pairs<float>(case1_var1);
+
+  std::cout << "-------case2-------" << std::endl;
+  std::string case2_source_str = "top_n=3&query_vec=1,2,3,4,5&min_score=0.5";
+  std::unordered_map<std::string, std::string> case2_parsing_result;
+  cill::str_k_str_v_groups_str_parser(case2_parsing_result, case2_source_str, "&", "=");
+  for (auto& item : case2_parsing_result) { std::cout << item.first << ": " << item.second << std::endl; }
   return 0;
 }
 

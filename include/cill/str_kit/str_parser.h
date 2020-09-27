@@ -48,6 +48,31 @@ inline auto str_str_k_num_v_group_parser(const std::string& input,
 }
 
 
+/**
+ * @brief
+ * Parsing a string in format such as "key0 ${kv_delimiter} val0 ${kv_group_delimiter} key1 ... " 
+ * into as `unordered_map`.
+ *
+ * @param dest The destination which will save parsing result.
+ * @param input Original input string which waiting parsing.
+ * @param kv_group_delimiter The delimiter sign which seperate different kv pairs into several groups.
+ * @param kv_delimiter The delimiter sign which seperate each kv-group's key and value.
+ */
+inline int32_t str_k_str_v_groups_str_parser(std::unordered_map<std::string, std::string>& dest, 
+    const std::string& input, const std::string& kv_group_delimiter, const std::string kv_delimiter) {
+  // Internal vars
+  std::vector<std::string> kv_groups = str_spliter(input, kv_group_delimiter);
+  std::vector<std::string> kv_pair;
+ 
+  for (auto& group : kv_groups) {
+    kv_pair = str_spliter(group, kv_delimiter);
+    dest.insert(std::pair<std::string, std::string>(kv_pair[0], kv_pair[1]));
+  }
+  return 0;
+}
+
+
 } // namesapce cill
+
 
 #endif
