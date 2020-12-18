@@ -26,4 +26,5 @@ set(ITERATOR_KIT_DEMO src/demo/iterator_kit_demo.cpp)
 add_executable(iterator_kit_demo ${ITERATOR_KIT_DEMO})
 set(STR_KIT_DEMO src/demo/str_kit_demo.cpp)
 add_executable(str_kit_demo ${STR_KIT_DEMO})
-
+set(SYS_KIT_DEMO src/demo/sys_kit_demo.cpp)
+add_executable(sys_kit_demo ${SYS_KIT_DEMO})
