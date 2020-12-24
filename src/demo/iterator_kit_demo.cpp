@@ -22,6 +22,7 @@
 #include "include/cill/random_kit/random_num.h"
 #include "include/cill/iterator_kit/elastic_indexer.h"
 #include "include/cill/iterator_kit/elastic_querier.h"
+#include "include/cill/iterator_kit/iter_converter.h"
 
 
 int32_t elastic_indexer_demo() {
@@ -75,10 +76,20 @@ int32_t elastic_querier_demo() {
 }
 
 
+int32_t iter_converter_demo() {
+  std::cout << "=======iter_converter_demo=======" << std::endl;
+  std::cout << "-------case for `vector2string`-------" << std::endl;
+  std::vector<float> fake_float_vec = {3.9, 6.2, 5.5};
+  std::cout << cill::num_1dvector2string<float>(fake_float_vec, ",") << std::endl;
+  return 0;
+}
+
+
 int main(int argc, char *argv[]) {
   cill::microsecond_random_seed();
   elastic_indexer_demo();
   elastic_querier_demo();
+  iter_converter_demo();
   return 0;
 }
 
