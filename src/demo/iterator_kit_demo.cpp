@@ -79,8 +79,9 @@ int32_t elastic_querier_demo() {
 int32_t iter_converter_demo() {
   std::cout << "=======iter_converter_demo=======" << std::endl;
   std::cout << "-------case for `vector2string`-------" << std::endl;
-  std::vector<float> fake_float_vec = {3.9, 6.2, 5.5};
+  std::vector<float> fake_float_vec = {3.9, 6.2, 5.5, 56, 124, 53};
   std::cout << cill::num_1dvector2string<float>(fake_float_vec, ",") << std::endl;
+  std::cout << cill::num_1dvector2string<float>(fake_float_vec, " ", 3) << std::endl; 
   return 0;
 }
 

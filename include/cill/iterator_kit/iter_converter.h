@@ -27,12 +27,15 @@ namespace cill {
  */
 template<typename ELEMT_TYPE=float>
 auto num_1dvector2string(const std::vector<ELEMT_TYPE> target_vec, 
-    const std::string& delimiter=",") -> std::string {
+    const std::string& delimiter=",", const int64_t max_elemt_num=1024) -> std::string {
   std::string output = ""; 
-  for (auto& item : target_vec) {
-    output = output + std::to_string(item) + delimiter;
+  for (int32_t i=0; i < target_vec.size() && i < max_elemt_num; ++i)
+    output = output + std::to_string(target_vec[i]) + delimiter;
+  if (max_elemt_num < target_vec.size()) {
+    output = output + "...";
+  } else {
+    output.pop_back();  
   }
-  output.pop_back();
   return output;
 }
 
