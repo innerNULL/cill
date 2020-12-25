@@ -30,7 +30,11 @@ auto path_helper_demo() -> int32_t {
   printf("Curr sys's path seperator is '%s'. \n", cill::get_path_delimiter().c_str());
 
   printf("testing `path_join` function\n");
-  printf("%s", cill::path_join("/user/fake/", "/fake1/fake2").c_str());
+  printf("%s%s", cill::path_join("/user/fake/", "/fake1/fake2").c_str(), "\n");
+  
+  std::vector<std::string> dir_files;
+  cill::list_dir(dir_files, "./", true);
+  for (auto& item : dir_files) { std::cout << item << std::endl; }
   return 0;
 }
 
