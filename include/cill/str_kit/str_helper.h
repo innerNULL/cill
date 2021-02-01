@@ -4,23 +4,11 @@
 #define CILL_STR_KIT_STR_HELPER_H_
 
 #include <algorithm>    
-#include <random>      
 #include <string>
+#include <regex>
 #include <unordered_map>
 #include <vector>
 #include <map>
-#include <iostream>
-#include <sstream>
-#include <chrono>
-#include <cassert>
-#include <locale>
-#include <codecvt>
-#include <any>
-#include <utility>
-#include <set>
-#include <math.h>
-#include <time.h>
-#include <sys/timeb.h>
 
 
 namespace cill {
@@ -36,7 +24,7 @@ inline bool is_num_str(const std::string input) {
 }
 
 
-inline auto str_spliter(std::string input, const std::string& delimiter) -> std::vector<std::string> {
+inline auto str_spliter_v0(std::string input, const std::string& delimiter) -> std::vector<std::string> {
   std::vector<std::string> output;
 
   int32_t location = input.find(delimiter);
@@ -47,6 +35,31 @@ inline auto str_spliter(std::string input, const std::string& delimiter) -> std:
   }
 
   if (input.size() > 0) { output.push_back(input); }
+  return output;
+}
+
+
+inline auto str_spliter(std::string input, const std::string& delimiter) -> std::vector<std::string> {
+  std::vector<std::string> output;
+  size_t begin = 0;
+  size_t end = 0;
+
+  begin = input.find_first_not_of(delimiter, end);
+  while (begin != std::string::npos) {
+    end = input.find_first_of(delimiter, begin + 1);
+    output.emplace_back(input.substr(begin, end - begin));
+
+    begin = input.find_first_not_of(delimiter, end); 
+  }
+  return output;
+}
+
+
+inline auto regexpr_spliter(
+    std::string input, const std::string& reg_exp) -> std::vector<std::string> {
+  std::vector<std::string> output;
+  std::regex splitter_reg_expr(reg_exp);
+  // TODO: Ref to https://stackoverflow.com/questions/49201654/splitting-a-string-with-multiple-delimiters-in-c/49201823
   return output;
 }
 
