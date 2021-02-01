@@ -1,11 +1,17 @@
+# file: CMakeLists.txt
+# date: 2020-07-23
 
-# 2020-07-23
 
 cmake_minimum_required(VERSION 3.12.4)
 project(cill C CXX)
 enable_testing()
+
+
 set(CMAKE_MACOSX_RPATH 1)
 
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 if(UNIX AND NOT APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
