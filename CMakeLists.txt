@@ -7,6 +7,10 @@ project(cill C CXX)
 enable_testing()
 
 
+# Parameters
+option(BUILD_TESTS "Build tests" OFF) # Set to 'ON' when do uni-test
+
+
 set(CMAKE_MACOSX_RPATH 1)
 
 SET(CMAKE_BUILD_TYPE "Debug")
@@ -19,6 +23,8 @@ elseif(APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
 
+
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/src/)
@@ -34,3 +40,10 @@ set(STR_KIT_DEMO src/demo/str_kit_demo.cpp)
 add_executable(str_kit_demo ${STR_KIT_DEMO})
 set(SYS_KIT_DEMO src/demo/sys_kit_demo.cpp)
 add_executable(sys_kit_demo ${SYS_KIT_DEMO})
+
+
+if (BUILD_TESTS)
+  message(STATUS "Building with unit-tests.")
+  include(googletest_pkg)
+  add_subdirectory(test)
+endif()
