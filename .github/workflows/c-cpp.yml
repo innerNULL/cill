@@ -18,6 +18,6 @@ jobs:
     - name: cmake
       run: cd ./build && cmake ../ -DBUILD_TESTS=ON
     - name: make 
-      run: cd ./build && ls
+      run: cd ./build && make
     - name: test
       run: cd ./build #&& ./test/cill_test
