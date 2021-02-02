@@ -14,7 +14,7 @@
 
 
 
-TEST(str_kit_TEST, str_spliter_TEST) {
+TEST(str_kit_str_helper_TEST, str_spliter_TEST) {
   // case 0
   std::string case0_var0 = "a-b-c-d-e-f-g";
   std::string case0_var1 = "-";
@@ -53,6 +53,22 @@ TEST(str_kit_TEST, str_spliter_TEST) {
   //for (auto& item : casr5_output) { std::cout << "dbg: " << item << std::endl;}
   // TODO: Fix
   //ASSERT_THAT(casr5_output, testing::ContainerEq(case5_target));
+}
+
+
+TEST(str_kit_str_helper_TEST, is_num_str_TEST) {
+  // case 0
+  std::string case0_var0 = "06";
+  EXPECT_EQ(cill::is_num_str(case0_var0), true);
+
+  // case 1
+  std::string case1_var0 = "-23.3";
+  EXPECT_EQ(cill::is_num_str(case1_var0), true);
+
+  // case 2
+  std::string case2_var0 = "kjh32";
+  EXPECT_EQ(cill::is_num_str(case2_var0), false);
+
 }
 
 
