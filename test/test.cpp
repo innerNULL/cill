@@ -44,4 +44,13 @@ TEST(str_kit_TEST, str_spliter_TEST) {
   std::string case4_var1 = ",,'!...~ ";
   std::vector<std::string> case4_target = {"we", "will", "go", "to", "end", "of", "the", "world"};
   ASSERT_THAT(cill::str_spliter(case4_var0, case4_var1), testing::ContainerEq(case4_target));
+
+  // case 5
+  std::string case5_var0 = "床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+  std::string case5_var1 = "。，";
+  std::vector<std::string> case5_target = {"床前明月光", "疑是地上霜", "举头望明月", "低头思故乡"};
+  std::vector<std::string> casr5_output = cill::str_spliter(case5_var0, case5_var1);
+  for (auto& item : casr5_output) { std::cout << "dbg: " << item << std::endl;}
+  ASSERT_THAT(casr5_output, testing::ContainerEq(case5_target));
+
 }

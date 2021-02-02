@@ -39,6 +39,7 @@ inline auto str_spliter_v0(std::string input, const std::string& delimiter) -> s
 }
 
 
+// TODO: Fix bug for Chinese string
 inline auto str_spliter(std::string input, const std::string& delimiter) -> std::vector<std::string> {
   std::vector<std::string> output;
   size_t begin = 0;
@@ -48,6 +49,7 @@ inline auto str_spliter(std::string input, const std::string& delimiter) -> std:
   while (begin != std::string::npos) {
     end = input.find_first_of(delimiter, begin + 1);
     output.emplace_back(input.substr(begin, end - begin));
+    //std::cout << "dbg: " << begin << "~" << end << ", " << input.substr(begin, end - begin) << std::endl;
 
     begin = input.find_first_not_of(delimiter, end); 
   }
