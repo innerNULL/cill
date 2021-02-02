@@ -34,9 +34,7 @@ bool if_include_cn(const char* input) {
 }
 
 
-bool if_include_cn(const std::string& input) {
-  return if_include_cn(input.c_str());
-}
+bool if_include_cn(const std::string& input) { return if_include_cn(input.c_str()); }
 
 
 } // namesapce cill
